@@ -18,9 +18,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-        let config: RSConfig = RSConfig(writeKey: "2AF4yS1ovvW6ZAxSHylMbHlZpEn")
-            .dataPlaneURL("https://4e4c-2405-201-8000-60fb-a5a7-a964-1cad-df2e.ngrok.io")
-            .controlPlaneURL("https://3476-2405-201-8000-60fb-a5a7-a964-1cad-df2e.ngrok.io")
+        let config: RSConfig = RSConfig(writeKey: "1wvsoF3Kx2SczQNlx1dvcqW9ODW")
+            .dataPlaneURL("https://rudderstacz.dataplane.rudderstack.com")
             .loglevel(.debug)
             .trackLifecycleEvents(true)
             .recordScreenViews(true)

@@ -25,7 +25,8 @@
     [config trackLifecycleEvents:YES];
     [config recordScreenViews:YES];
     
-    RSClient *client = [[RSClient alloc] initWithConfig:config];
+    RSClient *client = [RSClient sharedInstance];
+    [client configureWith:config];
     
     [client addDestination:[[RudderAppsFlyerDestination alloc] init]];
     [client track:@"Track 1"];
