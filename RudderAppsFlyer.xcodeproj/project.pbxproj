@@ -7,14 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7E98408FDF0DEF2DB991492A /* Pods_RudderAppsFlyer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C856BCC6EBB14A0B8A894044 /* Pods_RudderAppsFlyer.framework */; };
+		CCFEEABD26CAF94A627E4DC7 /* Pods_RudderAppsFlyer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF1374F81B9D1B7ED8CC0E65 /* Pods_RudderAppsFlyer.framework */; };
 		ED2A28F82770570400646788 /* RudderAppsFlyer.h in Headers */ = {isa = PBXBuildFile; fileRef = ED2A28F72770570400646788 /* RudderAppsFlyer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EDF68FE727D1FD620005AAC6 /* RSAppsFlyerDestination.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF68FE627D1FD620005AAC6 /* RSAppsFlyerDestination.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		7098CBCBEC133FD1113AB6F7 /* Pods-RudderAppsFlyer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RudderAppsFlyer.debug.xcconfig"; path = "Target Support Files/Pods-RudderAppsFlyer/Pods-RudderAppsFlyer.debug.xcconfig"; sourceTree = "<group>"; };
-		C856BCC6EBB14A0B8A894044 /* Pods_RudderAppsFlyer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RudderAppsFlyer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A4C5590DE5F25F96CA5DFC34 /* Pods-RudderAppsFlyer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RudderAppsFlyer.release.xcconfig"; path = "Target Support Files/Pods-RudderAppsFlyer/Pods-RudderAppsFlyer.release.xcconfig"; sourceTree = "<group>"; };
+		AF1374F81B9D1B7ED8CC0E65 /* Pods_RudderAppsFlyer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RudderAppsFlyer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED2A28EB2770560400646788 /* RudderAppsFlyer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RudderAppsFlyer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED2A28F72770570400646788 /* RudderAppsFlyer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RudderAppsFlyer.h; sourceTree = "<group>"; };
 		ED2A28FA2770591E00646788 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
@@ -22,7 +22,7 @@
 		ED2A28FC2770591E00646788 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		ED2A28FD2770591E00646788 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		EDF68FE627D1FD620005AAC6 /* RSAppsFlyerDestination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSAppsFlyerDestination.swift; sourceTree = "<group>"; };
-		EE6460BEF2AD6665F3C0FA0F /* Pods-RudderAppsFlyer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RudderAppsFlyer.release.xcconfig"; path = "Target Support Files/Pods-RudderAppsFlyer/Pods-RudderAppsFlyer.release.xcconfig"; sourceTree = "<group>"; };
+		F38754EAF39B3307935DFFDA /* Pods-RudderAppsFlyer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RudderAppsFlyer.debug.xcconfig"; path = "Target Support Files/Pods-RudderAppsFlyer/Pods-RudderAppsFlyer.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -30,7 +30,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7E98408FDF0DEF2DB991492A /* Pods_RudderAppsFlyer.framework in Frameworks */,
+				CCFEEABD26CAF94A627E4DC7 /* Pods_RudderAppsFlyer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,16 +40,16 @@
 		208F25C796D8593BF8DAB48E /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				7098CBCBEC133FD1113AB6F7 /* Pods-RudderAppsFlyer.debug.xcconfig */,
-				EE6460BEF2AD6665F3C0FA0F /* Pods-RudderAppsFlyer.release.xcconfig */,
+				F38754EAF39B3307935DFFDA /* Pods-RudderAppsFlyer.debug.xcconfig */,
+				A4C5590DE5F25F96CA5DFC34 /* Pods-RudderAppsFlyer.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		4D8E997BE166D24173BF7063 /* Frameworks */ = {
+		339AC530291FAC01FE7CB367 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				C856BCC6EBB14A0B8A894044 /* Pods_RudderAppsFlyer.framework */,
+				AF1374F81B9D1B7ED8CC0E65 /* Pods_RudderAppsFlyer.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -64,7 +64,7 @@
 				ED2A28F52770570400646788 /* Sources */,
 				ED2A28EC2770560400646788 /* Products */,
 				208F25C796D8593BF8DAB48E /* Pods */,
-				4D8E997BE166D24173BF7063 /* Frameworks */,
+				339AC530291FAC01FE7CB367 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -119,7 +119,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = ED2A28F22770560400646788 /* Build configuration list for PBXNativeTarget "RudderAppsFlyer" */;
 			buildPhases = (
-				5E2F42445128A8BEB86134A1 /* [CP] Check Pods Manifest.lock */,
+				08E99578061298983CD4393D /* [CP] Check Pods Manifest.lock */,
 				ED2A28E62770560400646788 /* Headers */,
 				ED2A28E72770560400646788 /* Sources */,
 				ED2A28E82770560400646788 /* Frameworks */,
@@ -180,7 +180,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		5E2F42445128A8BEB86134A1 /* [CP] Check Pods Manifest.lock */ = {
+		08E99578061298983CD4393D /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -358,7 +358,7 @@
 		};
 		ED2A28F32770560400646788 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7098CBCBEC133FD1113AB6F7 /* Pods-RudderAppsFlyer.debug.xcconfig */;
+			baseConfigurationReference = F38754EAF39B3307935DFFDA /* Pods-RudderAppsFlyer.debug.xcconfig */;
 			buildSettings = {
 				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
 				CLANG_ENABLE_MODULES = YES;
@@ -391,7 +391,7 @@
 		};
 		ED2A28F42770560400646788 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EE6460BEF2AD6665F3C0FA0F /* Pods-RudderAppsFlyer.release.xcconfig */;
+			baseConfigurationReference = A4C5590DE5F25F96CA5DFC34 /* Pods-RudderAppsFlyer.release.xcconfig */;
 			buildSettings = {
 				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
 				CLANG_ENABLE_MODULES = YES;
