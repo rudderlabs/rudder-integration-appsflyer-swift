@@ -82,8 +82,11 @@ class RSAppsFlyerDestination: RSDestinationPlugin {
                 if let category = message.properties?[RSKeys.Ecommerce.category] {
                     params[AFEventParamContentType] = "\(category)"
                 }
+            // Handle 'Unlock Achievement', 'Spend Credits', 'Promotion Viewed' and 'Promotion Clicked' events
             default:
-                break
+                if let properties = message.properties {
+                    params = properties
+                }
             }
             AppsFlyerLib.shared().logEvent(event, withValues: params)
         }
