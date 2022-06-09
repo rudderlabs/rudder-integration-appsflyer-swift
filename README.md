@@ -25,7 +25,7 @@
 ---
 # Integrating RudderStack iOS SDK with AppsFlyer
 
-This repository contains the resources and assets required to integrate the [RudderStack iOS SDK](https://www.rudderstack.com/docs/stream-sources/rudderstack-sdk-integration-guides/rudderstack-ios-sdk/ios-v2/) with [AppsFlyer](https://www.AppsFlyer.net/).
+This repository contains the resources and assets required to integrate the [RudderStack iOS SDK](https://www.rudderstack.com/docs/stream-sources/rudderstack-sdk-integration-guides/rudderstack-ios-sdk/ios-v2/) with [AppsFlyer](https://www.appsflyer.com/).
 
 For more information on configuring AppsFlyer as a destination in RudderStack and the supported events and their mappings, refer to the [AppsFlyer documentation](https://www.rudderstack.com/docs/stream-sources/appsflyer/).
 
