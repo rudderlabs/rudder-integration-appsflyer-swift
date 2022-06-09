@@ -2,31 +2,30 @@ PODS:
   - AppsFlyerFramework (6.5.4):
     - AppsFlyerFramework/Main (= 6.5.4)
   - AppsFlyerFramework/Main (6.5.4)
+  - Rudder (2.0.0)
   - RudderAppsFlyer (1.0.0):
     - AppsFlyerFramework (= 6.5.4)
-    - RudderStack
-  - RudderStack (1.0.0-beta.5)
+    - Rudder (~> 2.0.0)
 
 DEPENDENCIES:
   - AppsFlyerFramework (= 6.5.4)
+  - Rudder (~> 2.0.0)
   - RudderAppsFlyer (from `.`)
-  - RudderStack (from `~/Documents/Rudder/RudderStack-Swift/`)
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - AppsFlyerFramework
+    - Rudder
 
 EXTERNAL SOURCES:
   RudderAppsFlyer:
     :path: "."
-  RudderStack:
-    :path: "~/Documents/Rudder/RudderStack-Swift/"
 
 SPEC CHECKSUMS:
   AppsFlyerFramework: e309a6cab366296bf891dc68b175de1e9a44f86c
-  RudderAppsFlyer: e29152a6f46d1f5bcbca372e540a67fdb9aa52e0
-  RudderStack: 151db52fc1d2ccbba421c34c1916041d81cc6658
+  Rudder: 3191eb7c0bd0158fc983e0b7e171223f701ebc7c
+  RudderAppsFlyer: ef36abbece759fdcbdbb78018c230d5b0478d881
 
-PODFILE CHECKSUM: 6dad445e49d4a9b8d497f0440802fedcc179c6b4
+PODFILE CHECKSUM: 0475135d38d82890372289d4e5748640e9abe02c
 
 COCOAPODS: 1.11.3

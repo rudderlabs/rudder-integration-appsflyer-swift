@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import RudderStack
+import Rudder
 import AppsFlyerLib
 
 let AFEventRemoveFromCart = "remove_from_cart"
@@ -16,23 +16,30 @@ class RSAppsFlyerDestination: RSDestinationPlugin {
     let key = "AppsFlyer"
     var client: RSClient?
     var controller = RSController()
-    var appsFlyerConfig: AppsFlyerConfig?
+    var appsFlyerConfig: RudderAppsFlyerConfig?
     
     func update(serverConfig: RSServerConfig, type: UpdateType) {
         guard type == .initial else { return }
-        guard let appsFlyerConfig: AppsFlyerConfig = serverConfig.getConfig(forPlugin: self) else {
+        guard let appsFlyerConfig: RudderAppsFlyerConfig = serverConfig.getConfig(forPlugin: self) else {
+            client?.log(message: "Failed to Initialize AppsFlyer Factory", logLevel: .warning)
             return
         }
         self.appsFlyerConfig = appsFlyerConfig
-        AppsFlyerLib.shared().appsFlyerDevKey = appsFlyerConfig.devKey
-        AppsFlyerLib.shared().appleAppID = appsFlyerConfig.appleAppId
-        if client?.configuration.logLevel == .debug {
-            AppsFlyerLib.shared().isDebug = true
+        if !appsFlyerConfig.devKey.isEmpty {
+            AppsFlyerLib.shared().appsFlyerDevKey = appsFlyerConfig.devKey
+            AppsFlyerLib.shared().appleAppID = appsFlyerConfig.appleAppId
+            if client?.configuration?.logLevel == .debug {
+                AppsFlyerLib.shared().isDebug = true
+            }
+            AppsFlyerLib.shared().start()
+            client?.log(message: "Initializing AppsFlyer SDK", logLevel: .debug)
         }
     }
     
     func identify(message: IdentifyMessage) -> IdentifyMessage? {
-        AppsFlyerLib.shared().customerUserID = message.userId
+        if let userId = message.userId, !userId.isEmpty {
+            AppsFlyerLib.shared().customerUserID = userId
+        }
         if let traits = extractTraits(traits: message.traits) {
             var customData = [String: Any]()
             for (key, value) in traits {
@@ -45,12 +52,14 @@ class RSAppsFlyerDestination: RSDestinationPlugin {
                     customData[key] = value
                 }
             }
+            // See this for more information: https://dev.appsflyer.com/hc/docs/ios-sdk-reference-appsflyerlib#customdata
             AppsFlyerLib.shared().customData = customData
         }
         return message
     }
     
     func track(message: TrackMessage) -> TrackMessage? {
+        // E-Commerce event
         if let event = getAppsFlyerEcommerceEvent(from: message.event) {
             /// AppsFlyer doc for Ecommere events.
             /// https://support.appsflyer.com/hc/en-us/articles/360019347957--Recommended-eCommerce-app-events
@@ -63,7 +72,7 @@ class RSAppsFlyerDestination: RSDestinationPlugin {
             case AFEventContentView, AFEventAddToWishlist, AFEventAddToCart:
                 insertSingleProduct(params: &params, properties: message.properties)
             case AFEventListView:
-                insertProductList(params: &params, properties: message.properties)
+                insertProductListViewedProperties(params: &params, properties: message.properties)
             case AFEventInitiatedCheckout, AFEventPurchase:
                 insertMultipleProduct(params: &params, properties: message.properties)
             case AFEventRemoveFromCart:
@@ -73,13 +82,16 @@ class RSAppsFlyerDestination: RSDestinationPlugin {
                 if let category = message.properties?[RSKeys.Ecommerce.category] {
                     params[AFEventParamContentType] = "\(category)"
                 }
+            // Handle 'Unlock Achievement', 'Spend Credits', 'Promotion Viewed', 'Cart Shared', 'Product Shared'  and 'Promotion Clicked' events
             default:
                 if let properties = message.properties {
                     params = properties
                 }
             }
             AppsFlyerLib.shared().logEvent(event, withValues: params)
-        } else {
+        }
+        // Custom event
+        else {
             AppsFlyerLib.shared().logEvent(message.event, withValues: message.properties)
         }
         return message
@@ -168,38 +180,43 @@ extension RSAppsFlyerDestination {
         guard let properties = properties else {
             return
         }
-        for (key, value) in properties {
-            switch key {
-            case RSKeys.Ecommerce.currency:
-                params[AFEventParamCurrency] = "\(value)"
-            case RSKeys.Ecommerce.revenue:
-                params[AFEventParamRevenue] = Double("\(value)")
-            case RSKeys.Ecommerce.total:
-                params[AFEventParamPrice] = Int("\(value)")
-            case RSKeys.Ecommerce.orderId:
-                params[AFEventParamOrderId] = "\(value)"
-                params[AFEventParamReceiptId] = "\(value)"
-            case RSKeys.Ecommerce.products:
-                if let products = value as? [[String: Any]] {
-                    var ids = [String]()
-                    var categories = [Any?]()
-                    var quantities = [Int]()
-                    for product in products {
-                        if let productId = product[RSKeys.Ecommerce.productId] {
-                            ids.append("\(productId)")
-                        }
-                        if let category = product[RSKeys.Ecommerce.category] {
-                            categories.append("\(category)")
-                        }
-                        if let productQuantity = product[RSKeys.Ecommerce.quantity], let quantity = Int("\(productQuantity)") {
-                            quantities.append(quantity)
-                        }
-                    }
-                    params[AFEventParamContentId] = ids
-                    params[AFEventParamContentType] = categories
-                    params[AFEventParamQuantity] = quantities
+        
+        if let currency = properties[RSKeys.Ecommerce.currency] {
+            params[AFEventParamCurrency] = "\(currency)"
+        }
+        if let revenue = properties[RSKeys.Ecommerce.revenue] {
+            params[AFEventParamRevenue] = Double("\(revenue)")
+        }
+        if let price = properties[RSKeys.Ecommerce.total] {
+            params[AFEventParamPrice] = Double("\(price)")
+        }
+        if let orderId = properties[RSKeys.Ecommerce.orderId] {
+            params[AFEventParamOrderId] = "\(orderId)"
+            params[AFEventParamReceiptId] = "\(orderId)"
+        }
+        if let products = properties[RSKeys.Ecommerce.products] as? [[String: Any]] {
+            var ids = [String]()
+            var categories = [Any?]()
+            var quantities = [Int]()
+            for product in products {
+                if let productId = product[RSKeys.Ecommerce.productId] {
+                    ids.append("\(productId)")
                 }
-            default: break
+                if let category = product[RSKeys.Ecommerce.category] {
+                    categories.append("\(category)")
+                }
+                if let productQuantity = product[RSKeys.Ecommerce.quantity], let quantity = Int("\(productQuantity)") {
+                    quantities.append(quantity)
+                }
+            }
+            if !ids.isEmpty {
+                params[AFEventParamContentId] = ids
+            }
+            if !categories.isEmpty {
+                params[AFEventParamContentType] = categories
+            }
+            if !quantities.isEmpty {
+                params[AFEventParamQuantity] = quantities
             }
         }
     }
@@ -213,7 +230,7 @@ extension RSAppsFlyerDestination {
             case RSKeys.Ecommerce.currency:
                 params[AFEventParamCurrency] = "\(value)"
             case RSKeys.Ecommerce.price:
-                params[AFEventParamPrice] = Int("\(value)")
+                params[AFEventParamPrice] = Double("\(value)")
             case RSKeys.Ecommerce.productId:
                 params[AFEventParamContentId] = "\(value)"
             case RSKeys.Ecommerce.category:
@@ -225,13 +242,18 @@ extension RSAppsFlyerDestination {
         }
     }
     
-    func insertProductList(params: inout [String: Any], properties: [String: Any]?) {
+    func insertProductListViewedProperties(params: inout [String: Any], properties: [String: Any]?) {
         guard let properties = properties else {
             return
         }
         if let products = properties[RSKeys.Ecommerce.products] as? [[String: Any]] {
             var ids = [String]()
             var categories = [Any?]()
+            // Check category at the root
+            if let category = properties[RSKeys.Ecommerce.category] {
+                categories.append("\(category)")
+            }
+            // Check productId and category inside the products array
             for product in products {
                 if let productId = product[RSKeys.Ecommerce.productId] {
                     ids.append("\(productId)")
@@ -240,14 +262,17 @@ extension RSAppsFlyerDestination {
                     categories.append("\(category)")
                 }
             }
-            params[AFEventParamContentList] = ids
-            params[AFEventParamContentType] = categories
+            if !ids.isEmpty {
+                params[AFEventParamContentList] = ids
+            }
+            if !categories.isEmpty {
+                params[AFEventParamContentType] = categories
+            }
         }
-        
     }
 }
 
-struct AppsFlyerConfig: Codable {
+struct RudderAppsFlyerConfig: Codable {
     private let _devKey: String?
     var devKey: String {
         return _devKey ?? ""
