@@ -21,6 +21,7 @@
 		ED2A28FB2770591E00646788 /* RudderAppsFlyer.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = RudderAppsFlyer.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		ED2A28FC2770591E00646788 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		ED2A28FD2770591E00646788 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		ED8AED712A34384800EB9F12 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		EDF68FE627D1FD620005AAC6 /* RSAppsFlyerDestination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSAppsFlyerDestination.swift; sourceTree = "<group>"; };
 		F38754EAF39B3307935DFFDA /* Pods-RudderAppsFlyer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RudderAppsFlyer.debug.xcconfig"; path = "Target Support Files/Pods-RudderAppsFlyer/Pods-RudderAppsFlyer.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -58,6 +59,7 @@
 			isa = PBXGroup;
 			children = (
 				ED2A28FA2770591E00646788 /* LICENSE */,
+				ED8AED712A34384800EB9F12 /* Package.swift */,
 				ED2A28FD2770591E00646788 /* Podfile */,
 				ED2A28FC2770591E00646788 /* README.md */,
 				ED2A28FB2770591E00646788 /* RudderAppsFlyer.podspec */,
