@@ -14,15 +14,15 @@ let package = Package(
         )
     ],
     dependencies: [
-        .package(url: "https://github.com/AppsFlyerSDK/AppsFlyerFramework", "6.5.4"..<"6.5.5"),
-        .package(url: "https://github.com/rudderlabs/rudder-sdk-ios", from: "2.0.0"),
+        .package(name: "AppsFlyerLib", url: "https://github.com/AppsFlyerSDK/AppsFlyerFramework", "6.5.4"..<"6.5.5"),
+        .package(name: "Rudder",url: "https://github.com/rudderlabs/rudder-sdk-ios", from: "2.0.0"),
     ],
     targets: [
         .target(
             name: "RudderAppsFlyer",
             dependencies: [
-                .product(name: "AppsFlyerLib", package: "AppsFlyerFramework"),
-                .product(name: "Rudder", package: "rudder-sdk-ios"),
+                .product(name: "AppsFlyerLib", package: "AppsFlyerLib"),
+                .product(name: "Rudder", package: "Rudder"),
             ],
             path: "Sources",
             sources: ["Classes/"]
