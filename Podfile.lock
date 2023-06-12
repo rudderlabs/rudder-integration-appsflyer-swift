@@ -2,14 +2,14 @@ PODS:
   - AppsFlyerFramework (6.5.4):
     - AppsFlyerFramework/Main (= 6.5.4)
   - AppsFlyerFramework/Main (6.5.4)
-  - Rudder (2.0.0)
-  - RudderAppsFlyer (1.0.0):
+  - Rudder (2.4.0)
+  - RudderAppsFlyer (1.1.0):
     - AppsFlyerFramework (= 6.5.4)
-    - Rudder (~> 2.0.0)
+    - Rudder (~> 2.0)
 
 DEPENDENCIES:
   - AppsFlyerFramework (= 6.5.4)
-  - Rudder (~> 2.0.0)
+  - Rudder (~> 2.0)
   - RudderAppsFlyer (from `.`)
 
 SPEC REPOS:
@@ -23,9 +23,9 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   AppsFlyerFramework: e309a6cab366296bf891dc68b175de1e9a44f86c
-  Rudder: 3191eb7c0bd0158fc983e0b7e171223f701ebc7c
-  RudderAppsFlyer: ef36abbece759fdcbdbb78018c230d5b0478d881
+  Rudder: 7595af0282d02a88dd61816415d4b28cba16a195
+  RudderAppsFlyer: 0e414b48e26a49c4c11bd44f5fbc0fa87558abb0
 
-PODFILE CHECKSUM: 0475135d38d82890372289d4e5748640e9abe02c
+PODFILE CHECKSUM: 60f54b21bcd27a8a52bda918c92663cf7699f658
 
-COCOAPODS: 1.11.3
+COCOAPODS: 1.12.1
