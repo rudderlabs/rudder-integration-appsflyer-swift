@@ -5,3 +5,7 @@
 ## Version - 1.1.0 - 2023-06-12
 ### Added
 - Support for Swift Package Manager.
+
+## Version - 1.1.1 - 2023-08-22
+### Bug Fixes
+- Disabled destination is getting initialized.
