@@ -6,8 +6,8 @@ platform :ios, '13.0'
 
 target 'RudderAppsFlyer' do
     project 'RudderAppsFlyer.xcodeproj'
-    pod 'Rudder', '~> 2.0'
-    pod 'AppsFlyerFramework', '6.5.4'
+    pod 'Rudder'
+    pod 'AppsFlyerFramework'
 end
 
 target 'SampleAppObjC' do
