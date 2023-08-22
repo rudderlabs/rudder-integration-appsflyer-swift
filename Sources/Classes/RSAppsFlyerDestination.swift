@@ -19,7 +19,7 @@ class RSAppsFlyerDestination: RSDestinationPlugin {
     var appsFlyerConfig: RudderAppsFlyerConfig?
     
     func update(serverConfig: RSServerConfig, type: UpdateType) {
-        guard type == .initial else { return }
+        guard type == .initial, let destination = serverConfig.getDestination(by: key), destination.enabled == true else { return }
         guard let appsFlyerConfig: RudderAppsFlyerConfig = serverConfig.getConfig(forPlugin: self) else {
             client?.log(message: "Failed to Initialize AppsFlyer Factory", logLevel: .warning)
             return
