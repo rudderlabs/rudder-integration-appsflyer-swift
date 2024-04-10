@@ -3,7 +3,7 @@ PODS:
     - AppsFlyerFramework/Main (= 6.14.0)
   - AppsFlyerFramework/Main (6.14.0)
   - Rudder (2.4.3)
-  - RudderAppsFlyer (1.1.1):
+  - RudderAppsFlyer (1.2.0):
     - AppsFlyerFramework (= 6.14.0)
     - Rudder (~> 2.0)
 
@@ -24,7 +24,7 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   AppsFlyerFramework: 84e73360fc5b277da2a9322281c21cc467eaf023
   Rudder: 6d2c0775d5b606e05e00670615ee7f9c0c6d2813
-  RudderAppsFlyer: a54bf5304caf9af7eb7c1ea20daa00ebb1c37c55
+  RudderAppsFlyer: 368ef446b46c5113ef800cdc8b04c1d7b3061481
 
 PODFILE CHECKSUM: 2147a7b1a847ee4029db846e85d4806551834ad3
 
