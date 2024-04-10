@@ -20,5 +20,5 @@ Pod::Spec.new do |s|
     s.swift_version = '5.3'
 
     s.dependency 'Rudder', '~> 2.0'
-    s.dependency 'AppsFlyerFramework', '6.12.1'
+    s.dependency 'AppsFlyerFramework', '6.14.0'
 end
