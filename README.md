@@ -23,14 +23,15 @@
 </p>
 
 ---
+
 # Integrating RudderStack iOS SDK with AppsFlyer
 
 This repository contains the resources and assets required to integrate the [RudderStack iOS SDK](https://www.rudderstack.com/docs/stream-sources/rudderstack-sdk-integration-guides/rudderstack-ios-sdk/ios-v2/) with [AppsFlyer](https://www.appsflyer.com/).
 
 For more information on configuring AppsFlyer as a destination in RudderStack and the supported events and their mappings, refer to the [AppsFlyer documentation](https://www.rudderstack.com/docs/stream-sources/appsflyer/).
 
-| Important: This device mode integration is supported for AppsFlyer v6.5.4 and above. |
-| :---|
+| Important: This device mode integration is supported for AppsFlyer v6.14.0. |
+| :-------------------------------------------------------------------------- |
 
 ## Step 1: Integrate the SDK with AppsFlyer
 
@@ -38,7 +39,7 @@ For more information on configuring AppsFlyer as a destination in RudderStack an
 2. `RudderAppsFlyer` is available through [CocoaPods](https://cocoapods.org). To install it, add the following line to your `Podfile`:
 
 ```ruby
-pod 'RudderAppsFlyer', '~> 1.1.1'
+pod 'RudderAppsFlyer', '~> 1.2.0'
 ```
 
 3. Run the `pod install` command.
@@ -65,8 +66,8 @@ Place the following in your `AppDelegate` under the `didFinishLaunchingWithOptio
 
 ```swift
 let config: RSConfig = RSConfig(writeKey: WRITE_KEY)
-            .dataPlaneURL(DATA_PLANE_URL)       
-             
+            .dataPlaneURL(DATA_PLANE_URL)
+
 RSClient.sharedInstance().configure(with: config)
 RSClient.sharedInstance().addDestination()
 ```
@@ -90,7 +91,7 @@ Follow the steps listed in the [RudderStack iOS SDK](https://github.com/rudderla
 RudderStack is the **customer data platform** for developers. With RudderStack, you can build and deploy efficient pipelines that collect customer data from every app, website, and SaaS platform, then activate your data in your warehouse, business, and marketing tools.
 
 | Start building a better, warehouse-first CDP that delivers complete, unified data to every part of your customer data stack. Sign up for [RudderStack Cloud](https://app.rudderstack.com/signup?type=freetrial) today. |
-| :---|
+| :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 
 ## Contact us
 

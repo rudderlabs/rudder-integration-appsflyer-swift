@@ -1,0 +1,25 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "AppsFlyerLib",
+        "repositoryURL": "https://github.com/AppsFlyerSDK/AppsFlyerFramework-Static",
+        "state": {
+          "branch": null,
+          "revision": "19c1c5c476d431e381f35c8c99a2fe6435085207",
+          "version": "6.14.0"
+        }
+      },
+      {
+        "package": "Rudder",
+        "repositoryURL": "https://github.com/rudderlabs/rudder-sdk-ios",
+        "state": {
+          "branch": null,
+          "revision": "22575f73141aa4192582ee2ade9ae70ee29a6faa",
+          "version": "2.4.3"
+        }
+      }
+    ]
+  },
+  "version": 1
+}
