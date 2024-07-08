@@ -39,7 +39,7 @@ For more information on configuring AppsFlyer as a destination in RudderStack an
 2. `RudderAppsFlyer` is available through [CocoaPods](https://cocoapods.org). To install it, add the following line to your `Podfile`:
 
 ```ruby
-pod 'RudderAppsFlyer', '~> 1.2.1'
+pod 'RudderAppsFlyer', '~> 1.3.0'
 ```
 
 3. Run the `pod install` command.
