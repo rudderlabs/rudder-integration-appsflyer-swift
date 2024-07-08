@@ -30,7 +30,7 @@ This repository contains the resources and assets required to integrate the [Rud
 
 For more information on configuring AppsFlyer as a destination in RudderStack and the supported events and their mappings, refer to the [AppsFlyer documentation](https://www.rudderstack.com/docs/stream-sources/appsflyer/).
 
-| Important: This device mode integration is supported for AppsFlyer v6.14.0. |
+| Important: This device mode integration is supported for AppsFlyer v6.14.5. |
 | :-------------------------------------------------------------------------- |
 
 ## Step 1: Integrate the SDK with AppsFlyer
@@ -39,7 +39,7 @@ For more information on configuring AppsFlyer as a destination in RudderStack an
 2. `RudderAppsFlyer` is available through [CocoaPods](https://cocoapods.org). To install it, add the following line to your `Podfile`:
 
 ```ruby
-pod 'RudderAppsFlyer', '~> 1.2.0'
+pod 'RudderAppsFlyer', '~> 1.2.1'
 ```
 
 3. Run the `pod install` command.

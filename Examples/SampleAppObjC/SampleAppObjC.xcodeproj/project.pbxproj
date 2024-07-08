@@ -3,11 +3,14 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 53;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		795560778E3A8FCBCA6B28B5 /* Pods_SampleAppObjC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB61FD96E40C023BCB0D2C6A /* Pods_SampleAppObjC.framework */; };
+		999BBFBB2C3BD72B00F83BF9 /* RudderAppsFlyer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 999BBFBA2C3BD72B00F83BF9 /* RudderAppsFlyer.framework */; };
+		999BBFBC2C3BD72B00F83BF9 /* RudderAppsFlyer.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 999BBFBA2C3BD72B00F83BF9 /* RudderAppsFlyer.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		999BBFBE2C3BD72E00F83BF9 /* RudderAppsFlyer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 999BBFBA2C3BD72B00F83BF9 /* RudderAppsFlyer.framework */; };
 		EDB7218427DB4F70000EE8C4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EDB7218327DB4F70000EE8C4 /* AppDelegate.m */; };
 		EDB7218727DB4F70000EE8C4 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EDB7218627DB4F70000EE8C4 /* SceneDelegate.m */; };
 		EDB7218A27DB4F70000EE8C4 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EDB7218927DB4F70000EE8C4 /* ViewController.m */; };
@@ -17,8 +20,24 @@
 		EDB7219527DB4F71000EE8C4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EDB7219427DB4F71000EE8C4 /* main.m */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		999BBFBD2C3BD72B00F83BF9 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				999BBFBC2C3BD72B00F83BF9 /* RudderAppsFlyer.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		718A0DAA37AEFA761559823D /* Pods-SampleAppObjC.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SampleAppObjC.debug.xcconfig"; path = "Target Support Files/Pods-SampleAppObjC/Pods-SampleAppObjC.debug.xcconfig"; sourceTree = "<group>"; };
+		999BBFB82C3BD6FC00F83BF9 /* RudderAppsFlyer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RudderAppsFlyer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		999BBFBA2C3BD72B00F83BF9 /* RudderAppsFlyer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RudderAppsFlyer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB61FD96E40C023BCB0D2C6A /* Pods_SampleAppObjC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SampleAppObjC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCDD25B700A16147F546933A /* Pods-SampleAppObjC.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SampleAppObjC.release.xcconfig"; path = "Target Support Files/Pods-SampleAppObjC/Pods-SampleAppObjC.release.xcconfig"; sourceTree = "<group>"; };
 		EDB7217F27DB4F70000EE8C4 /* SampleAppObjC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SampleAppObjC.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -40,7 +59,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				999BBFBE2C3BD72E00F83BF9 /* RudderAppsFlyer.framework in Frameworks */,
 				795560778E3A8FCBCA6B28B5 /* Pods_SampleAppObjC.framework in Frameworks */,
+				999BBFBB2C3BD72B00F83BF9 /* RudderAppsFlyer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -50,6 +71,8 @@
 		0D20BE4D11E3C23E263C3379 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				999BBFBA2C3BD72B00F83BF9 /* RudderAppsFlyer.framework */,
+				999BBFB82C3BD6FC00F83BF9 /* RudderAppsFlyer.framework */,
 				BB61FD96E40C023BCB0D2C6A /* Pods_SampleAppObjC.framework */,
 			);
 			name = Frameworks;
@@ -113,6 +136,8 @@
 				EDB7217C27DB4F70000EE8C4 /* Frameworks */,
 				EDB7217D27DB4F70000EE8C4 /* Resources */,
 				23A84C157CE7850459A5B232 /* [CP] Embed Pods Frameworks */,
+				6A7B63A03C8EFDD44741835C /* [CP] Copy Pods Resources */,
+				999BBFBD2C3BD72B00F83BF9 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -207,6 +232,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6A7B63A03C8EFDD44741835C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SampleAppObjC/Pods-SampleAppObjC-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SampleAppObjC/Pods-SampleAppObjC-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SampleAppObjC/Pods-SampleAppObjC-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -365,7 +407,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = Z6DGB573C6;
+				DEVELOPMENT_TEAM = UCL2K3J73M;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SampleAppObjC/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -394,7 +436,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = Z6DGB573C6;
+				DEVELOPMENT_TEAM = UCL2K3J73M;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SampleAppObjC/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
