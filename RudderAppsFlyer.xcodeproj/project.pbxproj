@@ -14,6 +14,7 @@
 
 /* Begin PBXFileReference section */
 		76B644ABC86B6F403E136147 /* Pods-RudderAppsFlyer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RudderAppsFlyer.debug.xcconfig"; path = "Target Support Files/Pods-RudderAppsFlyer/Pods-RudderAppsFlyer.debug.xcconfig"; sourceTree = "<group>"; };
+		999BBFB62C3BD6BE00F83BF9 /* RudderAppsFlyer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RudderAppsFlyer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B7F7171AF4843CEA43A01DB /* Pods_RudderAppsFlyer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RudderAppsFlyer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABE0FFA7C6415C35D8CBB54F /* Pods-RudderAppsFlyer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RudderAppsFlyer.release.xcconfig"; path = "Target Support Files/Pods-RudderAppsFlyer/Pods-RudderAppsFlyer.release.xcconfig"; sourceTree = "<group>"; };
 		ED2A28EB2770560400646788 /* RudderAppsFlyer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RudderAppsFlyer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -50,6 +51,7 @@
 		C7EFA7D96A8FFBF07FC12D61 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				999BBFB62C3BD6BE00F83BF9 /* RudderAppsFlyer.framework */,
 				9B7F7171AF4843CEA43A01DB /* Pods_RudderAppsFlyer.framework */,
 			);
 			name = Frameworks;
@@ -127,6 +129,7 @@
 				ED2A28E82770560400646788 /* Frameworks */,
 				ED2A28E92770560400646788 /* Resources */,
 				ED4E16B527FC463C00C456D9 /* SwiftLint Script */,
+				ED5408C6D735F97E74CA20D2 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -221,6 +224,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+		ED5408C6D735F97E74CA20D2 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RudderAppsFlyer/Pods-RudderAppsFlyer-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RudderAppsFlyer/Pods-RudderAppsFlyer-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RudderAppsFlyer/Pods-RudderAppsFlyer-resources.sh\"\n";
+			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -367,7 +387,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = GTGKNDBD23;
+				DEVELOPMENT_TEAM = UCL2K3J73M;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -400,7 +420,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = GTGKNDBD23;
+				DEVELOPMENT_TEAM = UCL2K3J73M;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";

@@ -9,6 +9,7 @@
 
 @import Rudder;
 @import RudderAppsFlyer;
+@import AppsFlyerLib;
 
 @interface AppDelegate ()
 
@@ -19,8 +20,16 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    RSConfig *config = [[RSConfig alloc] initWithWriteKey:@"1wvsoF3Kx2SczQNlx1dvcqW9ODW"];
-    [config dataPlaneURL:@"https://rudderstacz.dataplane.rudderstack.com"];
+    
+    
+    [[AppsFlyerLib shared] setAppsFlyerDevKey:@"<DEV_Key>"];
+    [[AppsFlyerLib shared] setAppleAppID:@"<APPLE_APP_ID>"];
+    [AppsFlyerLib shared].isDebug = YES;
+    
+    [[AppsFlyerLib shared] waitForATTUserAuthorizationWithTimeoutInterval:30];
+ 
+    RSConfig *config = [[RSConfig alloc] initWithWriteKey:@"<WRITE_KEY>"];
+    [config dataPlaneURL:@"<DATA_PLANE_URL>"];
     [config loglevel:RSLogLevelDebug];
     [config trackLifecycleEvents:YES];
     [config recordScreenViews:YES];

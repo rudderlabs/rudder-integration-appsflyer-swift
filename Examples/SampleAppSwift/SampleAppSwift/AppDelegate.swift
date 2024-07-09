@@ -9,6 +9,7 @@
 import UIKit
 import Rudder
 import RudderAppsFlyer
+import AppsFlyerLib
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -18,8 +19,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-        let config: RSConfig = RSConfig(writeKey: "1wvsoF3Kx2SczQNlx1dvcqW9ODW")
-            .dataPlaneURL("https://rudderstacz.dataplane.rudderstack.com")
+        AppsFlyerLib.shared().appsFlyerDevKey = "<DEV_KEY>"
+        AppsFlyerLib.shared().appleAppID = "<APPLE_APP_ID>"
+        AppsFlyerLib.shared().isDebug = true
+        AppsFlyerLib.shared().waitForATTUserAuthorization(timeoutInterval: 30)
+        
+        
+        let config: RSConfig = RSConfig(writeKey: "<WRITE_KEY>")
+            .dataPlaneURL("<DATA_PLANE_URL>")
             .loglevel(.debug)
             .trackLifecycleEvents(true)
             .recordScreenViews(true)
