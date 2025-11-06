@@ -3,6 +3,9 @@ name: Manually deploy to Cocoapods
 on:
   workflow_dispatch
 
+permissions:
+  contents: read
+
 jobs:
   deploy-cocoapods-manual:
     name: Manually deploy to Cocoapods
