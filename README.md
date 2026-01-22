@@ -23,9 +23,30 @@
 </p>
 
 ---
-
 # Integrating RudderStack iOS SDK with AppsFlyer
-
+> ---
+> ## ⚠️ Deprecation Notice
+>
+> This repository contains an integration built on top of a **deprecated core SDK** and is no longer actively maintained.
+>
+> Please migrate to the newer, actively maintained **Swift SDK**:
+> - **Core SDK:** Swift SDK
+> - **Repository:** https://github.com/rudderlabs/rudder-sdk-swift
+> - **Documentation:** https://www.rudderstack.com/docs/sources/event-streams/sdks/swift-sdk/
+>
+> This repository will not receive new features, bug fixes, or security updates and will be **sunset in the near future**.
+>
+> ### Replacement Integration Available
+>
+> A newer version of this integration is available and is fully compatible with the new core SDK:
+>
+> - **Replacement Integration:** RudderIntegrationAppsFlyer
+> - **Repository:** https://github.com/rudderlabs/integration-swift-appsflyer/
+> - **Documentation:** https://www.rudderstack.com/docs/destinations/streaming-destinations/appsflyer/
+>
+> We strongly recommend migrating to the new core SDK and adopting this replacement integration as soon as possible.
+>
+> ---
 This repository contains the resources and assets required to integrate the [RudderStack iOS SDK](https://www.rudderstack.com/docs/stream-sources/rudderstack-sdk-integration-guides/rudderstack-ios-sdk/ios-v2/) with [AppsFlyer](https://www.appsflyer.com/).
 
 For more information on configuring AppsFlyer as a destination in RudderStack and the supported events and their mappings, refer to the [AppsFlyer documentation](https://www.rudderstack.com/docs/stream-sources/appsflyer/).
